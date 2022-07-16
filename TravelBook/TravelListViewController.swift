@@ -13,7 +13,9 @@ class TravelListViewController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var tableView: UITableView!
     var titlerArray = [String]()
     var idArray = [UUID]()
-    var selectedPlace = ""
+    var choosenTitle = ""
+    var choosenTitleId : UUID?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +60,7 @@ class TravelListViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     @objc func addButtonClicked(){
-        
+        choosenTitle = ""
         performSegue(withIdentifier: "toDetailPlace", sender: nil)
     }
 
@@ -74,7 +76,18 @@ class TravelListViewController: UIViewController,UITableViewDelegate,UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        choosenTitle = titlerArray[indexPath.row]
+        choosenTitleId = idArray[indexPath.row]
+        performSegue(withIdentifier: "toDetailPlace", sender: nil)
+    }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailPlace" {
+            let destinationVC = segue.destination as! ViewController
+            destinationVC.selectedTitle = choosenTitle
+            destinationVC.selectedTitleID = choosenTitleId
+        }
+    }
 
 }
