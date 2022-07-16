@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CV6-Ol-ZkL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -88,19 +88,7 @@
                             <constraint firstItem="Lxj-5y-BDI" firstAttribute="leading" secondItem="Eq4-bw-kjT" secondAttribute="leading" id="g5h-s5-qDl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xOs-Kv-WbG">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="3dc-wK-yN8">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KIF-OW-T2Z">
-                                <rect key="frame" x="319" y="5" width="75" height="34.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
-                            <connections>
-                                <action selector="addbutton:" destination="vP5-de-ee6" id="j2Z-2V-Hbt"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="xOs-Kv-WbG"/>
                     <connections>
                         <outlet property="tableView" destination="Lxj-5y-BDI" id="Okp-Qw-0Cr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toDetailPlace" id="9SO-nH-6IH"/>
