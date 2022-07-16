@@ -14,6 +14,7 @@
 		1A0A76EE287E044300CC3E32 /* TravelBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A0A76EC287E044300CC3E32 /* TravelBook.xcdatamodeld */; };
 		1A0A76F0287E044500CC3E32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A0A76EF287E044500CC3E32 /* Assets.xcassets */; };
 		1A0A76F3287E044500CC3E32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A0A76F1287E044500CC3E32 /* LaunchScreen.storyboard */; };
+		1A47EADF2882EB63001C5679 /* TravelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47EADE2882EB63001C5679 /* TravelListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1A0A76EF287E044500CC3E32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A0A76F2287E044500CC3E32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A0A76F4287E044500CC3E32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A47EADE2882EB63001C5679 /* TravelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				1A0A76E3287E044200CC3E32 /* AppDelegate.swift */,
 				1A0A76E5287E044200CC3E32 /* SceneDelegate.swift */,
 				1A0A76E7287E044200CC3E32 /* ViewController.swift */,
+				1A47EADE2882EB63001C5679 /* TravelListViewController.swift */,
 				1A0A76E9287E044300CC3E32 /* Main.storyboard */,
 				1A0A76EF287E044500CC3E32 /* Assets.xcassets */,
 				1A0A76F1287E044500CC3E32 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A47EADF2882EB63001C5679 /* TravelListViewController.swift in Sources */,
 				1A0A76EE287E044300CC3E32 /* TravelBook.xcdatamodeld in Sources */,
 				1A0A76E8287E044200CC3E32 /* ViewController.swift in Sources */,
 				1A0A76E4287E044200CC3E32 /* AppDelegate.swift in Sources */,
