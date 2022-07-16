@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import CoreData
 
 class TravelListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var titlerArray = [String]()
+    var idArray = [UUID]()
     var selectedPlace = ""
     
     override func viewDidLoad() {
@@ -20,6 +22,39 @@ class TravelListViewController: UIViewController,UITableViewDelegate,UITableView
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        getData()
+    }
+    
+    func getData(){
+     
+        let appDelegate = UIApplication.shared.delegate as!AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Places")
+        request.returnsObjectsAsFaults = false
+        do {
+        let results = try context.fetch(request)
+           if (results.count > 0) {
+               
+               self.titlerArray.removeAll(keepingCapacity: false)
+               self.idArray.removeAll(keepingCapacity: false)
+            for result in results as! [NSManagedObject] {
+                if let title = (result.value(forKey: "title") as? String){
+                    self.titlerArray.append(title)
+                }
+                if let id = result.value(forKey: "id") as? UUID{
+                    self.idArray.append(id)
+                }
+                
+                tableView.reloadData()
+                
+            }
+            }
+        }catch{
+            print("fail")
+        }
+        
     }
     
     @objc func addButtonClicked(){
@@ -30,12 +65,12 @@ class TravelListViewController: UIViewController,UITableViewDelegate,UITableView
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return titlerArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "test"
+        cell.textLabel?.text = titlerArray[indexPath.row]
         return cell
     }
     
